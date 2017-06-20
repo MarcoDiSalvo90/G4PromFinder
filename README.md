@@ -14,3 +14,8 @@ Annotation file must be in txt format. It must be organized in 3 columns. The fi
 
 Output: a text file containing promoter coordinates and a file containing informations about them.
 
+
+DOI: https://zenodo.org/badge/latestdoi/94889640
+
+
+
