@@ -10,7 +10,7 @@ Genome file must be in fasta format.
 Output: a text file containing promoter coordinates and a file containing informations about them.
 
 
-DOI: https://zenodo.org/badge/latestdoi/94889640
+DOI: https://zenodo.org/badge/94889640.svg
 
 
 
