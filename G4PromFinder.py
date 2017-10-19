@@ -43,7 +43,7 @@ try:
         x1 = scale + j
         x2 = scale + j + 25
         OK = 0
-        if x2 > len(genome)-50:
+        if x2 > len(genome):
             break
         else:
             w = genome[x1:x2]
@@ -67,16 +67,19 @@ try:
                         predictions += 1
                         dati = []
                         for g in range(50):
-                            w = genome[x1+g:x2+g]
-                            at =100*(w.count("A")+w.count("T"))/len(w)
-                            prom = genome[x1+g-50:x2+g]
-                            if at >= 40:
-                                if re.search(pattern2,prom) or re.search(pattern1,prom):
-                                    dati.append(at)
+                            if x2+g <= len(genome):
+                                w = genome[x1+g:x2+g]
+                                at =100*(w.count("A")+w.count("T"))/len(w)
+                                prom = genome[x1+g-50:x2+g]
+                                if at >= 40:
+                                    if re.search(pattern2,prom) or re.search(pattern1,prom):
+                                        dati.append(at)
+                                    else:
+                                        dati.append(0)
                                 else:
                                     dati.append(0)
                             else:
-                                dati.append(0)
+                                break
                         maxP = np.argmax(dati)
                         at = np.max(dati)
                         x1 = x1 + maxP
@@ -132,16 +135,19 @@ try:
                         dati = []
                         predictions += 1
                         for g in range(50):
-                            w = genome[x1+g:x2+g]
-                            at =100*(w.count("A")+w.count("T"))/len(w)
-                            prom = genome[x1+g:x2+g+50]
-                            if at >= 40:
-                                if re.search(pattern1,prom) or re.search(pattern2,prom):
-                                    dati.append(at)
+                            if x2+g <= len(genome):
+                                w = genome[x1+g:x2+g]
+                                at =100*(w.count("A")+w.count("T"))/len(w)
+                                prom = genome[x1+g:x2+g+50]
+                                if at >= 40:
+                                    if re.search(pattern1,prom) or re.search(pattern2,prom):
+                                        dati.append(at)
+                                    else:
+                                        dati.append(0)
                                 else:
                                     dati.append(0)
                             else:
-                                dati.append(0)
+                                break
                         maxP = np.argmax(dati)
                         at = np.max(dati)
                         x1 = x1 + maxP
