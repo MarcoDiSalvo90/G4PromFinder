@@ -12,5 +12,7 @@ Output: a text file containing promoter coordinates and a file containing inform
 
 DOI: https://zenodo.org/badge/latestdoi/94889640
 
+OMICtools page:  https://omictools.com/g4promfinder-tool
+
 
 
